@@ -39,7 +39,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/editTextNama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nama" />
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/editTextUmur"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/editTextAsal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Asal" />
@@ -89,25 +89,26 @@
             android:text="Pemilihan Paket Kursus :" />
 
         <RadioGroup
+            android:id="@+id/RadioGroupPaket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/radioButtonK"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
                 android:text="Paket Kilat" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/radioButtonS"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
                 android:text="Paket Standard" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/radioButtonM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
@@ -115,47 +116,41 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textViewGenre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Genre :" />
 
         <CheckBox
-            android:id="@+id/checkBox4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New CheckBox" />
-
-        <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/checkBoxM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="Modern" />
 
         <CheckBox
-            android:id="@+id/checkBox2"
+            android:id="@+id/checkBoxT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="Tradisional" />
 
         <CheckBox
-            android:id="@+id/checkBox3"
+            android:id="@+id/checkBoxMus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="Muslim" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttondaftar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="Daftar" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textViewHasil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
