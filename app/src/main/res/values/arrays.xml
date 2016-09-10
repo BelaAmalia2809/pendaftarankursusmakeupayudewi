@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cabang">
+        <item> Banyuwangi </item>
+        <item> Rogojampi </item>
+        <item> Srono </item>
+        <item> Jajag </item>
+    </string-array>
+</resources>
