@@ -18,21 +18,23 @@
 
         <TextView
             android:id="@+id/textView"
+            style="@style/Base.TextAppearance.AppCompat.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Kursus Make Up Ayu Dewi" />
+            android:text="Kursus Make Up Ayu Dewi"
+            android:textColor="@android:color/holo_orange_dark" />
 
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="162dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textView"
             android:layout_gravity="center_horizontal"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/gambar" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -42,7 +44,8 @@
                 android:id="@+id/editTextNama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nama" />
+                android:hint="Nama"
+                android:textColor="@android:color/holo_orange_dark" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -55,7 +58,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Umur"
-                android:inputType="numberSigned" />
+                android:inputType="numberSigned"
+                android:textColor="@android:color/holo_orange_dark" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -66,7 +70,8 @@
                 android:id="@+id/editTextAsal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Asal" />
+                android:hint="Asal"
+                android:textColor="@android:color/holo_orange_dark" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -74,7 +79,8 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cabang :" />
+            android:text="Cabang :"
+            android:textColor="@android:color/holo_orange_dark" />
 
         <Spinner
             android:id="@+id/spinnerCabang"
@@ -86,7 +92,8 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pemilihan Paket Kursus :" />
+            android:text="Pemilihan Paket Kursus :"
+            android:textColor="@android:color/holo_orange_dark" />
 
         <RadioGroup
             android:id="@+id/RadioGroupPaket"
@@ -98,60 +105,99 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
-                android:text="Paket Kilat" />
+                android:text="Paket Kilat"
+                android:textColor="@android:color/holo_orange_dark" />
 
             <RadioButton
                 android:id="@+id/radioButtonS"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
-                android:text="Paket Standard" />
+                android:text="Paket Standard"
+                android:textColor="@android:color/holo_orange_dark" />
 
             <RadioButton
                 android:id="@+id/radioButtonM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
-                android:text="Paket Murah" />
+                android:text="Paket Murah"
+                android:textColor="@android:color/holo_orange_dark" />
         </RadioGroup>
 
         <TextView
             android:id="@+id/textViewGenre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Genre :" />
+            android:text="Genre :"
+            android:textColor="@android:color/holo_orange_dark" />
 
         <CheckBox
             android:id="@+id/checkBoxM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Modern" />
+            android:text="Modern"
+            android:textColor="@android:color/holo_orange_dark" />
 
         <CheckBox
             android:id="@+id/checkBoxT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Tradisional" />
+            android:text="Tradisional"
+            android:textColor="@android:color/holo_orange_dark" />
 
         <CheckBox
             android:id="@+id/checkBoxMus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Muslim" />
+            android:text="Muslim"
+            android:textColor="@android:color/holo_orange_dark" />
 
         <Button
             android:id="@+id/buttondaftar"
-            android:layout_width="wrap_content"
+            style="@style/Base.TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Daftar" />
+            android:background="@drawable/bgbtn"
+            android:text="Daftar"
+            android:textColor="@color/abc_primary_text_disable_only_material_dark" />
+
+        <TextView
+            android:id="@+id/textViewspace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
 
         <TextView
             android:id="@+id/textViewHasil"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/holo_orange_dark"
+            android:text=""
+            android:textColor="@color/abc_primary_text_disable_only_material_dark" />
+
+        <TextView
+            android:id="@+id/textViewspace2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <Button
+            android:id="@+id/buttonkembali"
+            style="@style/Base.TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bgbtn"
+            android:text="Kembali"
+            android:textColor="@color/abc_primary_text_disable_only_material_dark"
+            android:visibility="gone" />
+
+
     </LinearLayout>
 </ScrollView>

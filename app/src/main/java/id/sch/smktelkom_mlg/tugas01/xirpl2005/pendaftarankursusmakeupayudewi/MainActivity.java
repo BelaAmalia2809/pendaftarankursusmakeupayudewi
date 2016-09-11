@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     RadioButton rbk, rbs, rbm;
     RadioGroup rgpaket;
     Spinner spcabang;
-    Button btndaftar;
+    Button btndaftar, btnkembali;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         rbm = (RadioButton) findViewById(R.id.radioButtonM);
         spcabang = (Spinner) findViewById(R.id.spinnerCabang);
         btndaftar = (Button) findViewById(R.id.buttondaftar);
+        btnkembali = (Button) findViewById(R.id.buttonkembali);
 
         cbM.setOnCheckedChangeListener(this);
         cbT.setOnCheckedChangeListener(this);
@@ -54,6 +55,31 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                 doProccess();
             }
         });
+        btnkembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                doKembali();
+            }
+        });
+
+    }
+
+    private void doKembali() {
+        findViewById(R.id.buttondaftar).setVisibility(View.VISIBLE);
+        findViewById(R.id.imageView).setVisibility(View.VISIBLE);
+        findViewById(R.id.editTextNama).setVisibility(View.VISIBLE);
+        findViewById(R.id.editTextUmur).setVisibility(View.VISIBLE);
+        findViewById(R.id.editTextAsal).setVisibility(View.VISIBLE);
+        findViewById(R.id.textView2).setVisibility(View.VISIBLE);
+        findViewById(R.id.spinnerCabang).setVisibility(View.VISIBLE);
+        findViewById(R.id.textView3).setVisibility(View.VISIBLE);
+        findViewById(R.id.RadioGroupPaket).setVisibility(View.VISIBLE);
+        findViewById(R.id.textViewGenre).setVisibility(View.VISIBLE);
+        findViewById(R.id.checkBoxM).setVisibility(View.VISIBLE);
+        findViewById(R.id.checkBoxT).setVisibility(View.VISIBLE);
+        findViewById(R.id.checkBoxMus).setVisibility(View.VISIBLE);
+        findViewById(R.id.buttonkembali).setVisibility(View.GONE);
+        findViewById(R.id.textViewHasil).setVisibility(View.GONE);
     }
 
     private void doProccess() {
@@ -61,12 +87,12 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             String nama = etnama.getText().toString();
             int umur = Integer.parseInt(etumur.getText().toString());
             String asal = etasal.getText().toString();
-            String hasil = "\n Genre                      : ";
+            String hasil = "\n Genre                          : ";
             if (cbM.isChecked()) hasil += cbM.getText() + " ";
             if (cbT.isChecked()) hasil += cbT.getText() + " ";
             if (cbMus.isChecked()) hasil += cbMus.getText() + " ";
             String hasilpaket = null;
-            String keahlian = spcabang.getSelectedItem().toString();
+            String cabang = spcabang.getSelectedItem().toString();
 
             if (rbk.isChecked()) {
                 hasilpaket = rbk.getText().toString();
@@ -78,12 +104,24 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                 hasilpaket = "Anda belum memilih paket";
             }
 
+            findViewById(R.id.buttondaftar).setVisibility(View.GONE);
+            findViewById(R.id.imageView).setVisibility(View.GONE);
+            findViewById(R.id.editTextNama).setVisibility(View.GONE);
+            findViewById(R.id.editTextUmur).setVisibility(View.GONE);
+            findViewById(R.id.editTextAsal).setVisibility(View.GONE);
+            findViewById(R.id.textView2).setVisibility(View.GONE);
+            findViewById(R.id.spinnerCabang).setVisibility(View.GONE);
+            findViewById(R.id.textView3).setVisibility(View.GONE);
+            findViewById(R.id.RadioGroupPaket).setVisibility(View.GONE);
+            findViewById(R.id.textViewGenre).setVisibility(View.GONE);
+            findViewById(R.id.checkBoxM).setVisibility(View.GONE);
+            findViewById(R.id.checkBoxT).setVisibility(View.GONE);
+            findViewById(R.id.checkBoxMus).setVisibility(View.GONE);
+            findViewById(R.id.buttonkembali).setVisibility(View.VISIBLE);
+            findViewById(R.id.textViewHasil).setVisibility(View.VISIBLE);
+
             tvhasil.setText(
-                    " Nama                       : " + nama + " " +
-                            "\n Umur                       : " + umur + " " +
-                            "\n Asal                         : " + asal + hasil + " " +
-                            "\n Pilihan Paket            : " + hasilpaket + " " +
-                            "\n Cabang yang dipilih  : " + keahlian + " ");
+                    " Nama                           : " + nama + " " + "\n Umur                           : " + umur + " " + "\n Asal                             : " + asal + " " + "\n Cabang yang dipilih : " + cabang + " " + "\n Pilihan Paket              : " + hasilpaket + " " + hasil);
         }
     }
 
@@ -94,32 +132,32 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         String umur = etumur.getText().toString();
         String asal = etasal.getText().toString();
 
-        int umurint = 0;
+        int umurangka = 0;
 
         if (nama.isEmpty()) {
-            etnama.setError("Anda belum mengisikan Nama");
+            etnama.setError("Nama harus terisi untuk mendaftar");
             valid = false;
-        } else if (nama.length() < 3) {
-            etnama.setError("Nama anda minimal berisikan 3 karakter");
+        } else if (nama.length() < 5) {
+            etnama.setError("Nama minimal 5 karakter");
             valid = false;
         } else {
             etnama.setError(null);
         }
 
         if (umur.isEmpty()) {
-            etumur.setError("Anda belum mengisikan umur");
+            etumur.setError("Umur harus terisi untuk mendatar");
             valid = false;
         } else {
-            umurint = Integer.parseInt(umur);
+            umurangka = Integer.parseInt(umur);
         }
 
-        if (umurint == 0) {
-            etumur.setError("Anda belum mengisikan umur");
+        if (umurangka == 0) {
+            etumur.setError("Umur harus terisi untuk mendatar");
             valid = false;
-        } else if (umurint < 7) {
+        } else if (umurangka < 12) {
             etumur.setError("Anda minimal harus berusia 12 tahun");
             valid = false;
-        } else if (umurint > 24) {
+        } else if (umurangka > 50) {
             etumur.setError("Maksimal, umur anda adalah 50 tahun untuk mengikuti kursus");
             valid = false;
         } else {
@@ -127,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         }
 
         if (asal.isEmpty()) {
-            etasal.setError("Anda belum mengisikan asal kota anda");
+            etasal.setError("Asal kota harus terisi untuk mendaftar");
             valid = false;
         } else {
             etasal.setError(null);
